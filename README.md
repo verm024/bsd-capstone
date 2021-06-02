@@ -5,7 +5,8 @@ Indonesian Government data shows that 82.8% of survey respondents stated that th
 
 ## Project Repository
 [Android](https://github.com/fikrim2204/BantuanSosialDetector) \
-[Machine Learning](https://github.com/verm024/bsd-capstone)
+[Machine Learning](https://github.com/verm024/bsd-capstone) \
+[Cloud](https://github.com/ariidjs/capstone)
 
 ## Our Team
 1. [A1321655-Fikri Maulana](https://github.com/fikrim2204)
@@ -16,16 +17,15 @@ Indonesian Government data shows that 82.8% of survey respondents stated that th
 6. [C1321657-Vienne Anggelica Kurnia](https://github.com/vienneanggelica)
 
 ## Steps to use
-Android:
-1. Clone this repository and run on Android Studio, or
-2. Download the apk [here]()
-3. Open the application, sign up or login with Google.
-4. To request Bantuan Sosial, please fill the form.
-5. See the result.
-6. If you are accepted, the app will show the delivery tracker.
-7. Admin can use admin app to update the status delivery.
+### Android:
+1. Clone this repository and run on Android Studio, or download the APK
+2. Open the application, sign up or login with Google.
+3. To request Bantuan Sosial, please fill the form.
+4. See the result.
+5. If you are accepted, the app will show the delivery tracker.
+6. Admin can use admin app to update the status delivery.
 
-Machine Learning:
+### Machine Learning:
 1. Clone this repository
 2. If you just want to test the code, then you can open the code and run all the cell through Jupyter Notebook/Google Colab
 3. If you want to deploy the model, run the model in the SavedModel folder using [TFServe](https://www.tensorflow.org/tfx/guide/serving)
@@ -34,7 +34,29 @@ Machine Learning:
 6. The response would be user's probability to accept Bantuan Sosial (response<0.5 is rejected, response>=0.5 is accepted)
 
 ## How it works
-Machine Learning:
+### Android:
+1. Create new project in android studio
+2. Add this libraries to your project
+   * Retrofit
+   * Coroutine
+   * Firebase
+   * Kotlin injection
+   * Navigation Component
+
+3. Add this plugin
+   * id 'com.google.gms.google-services'
+   * id 'androidx.navigation.safeargs.kotlin'
+
+4. If you want to use navigation component with safe args, add this to build.gradle(project)
+   * classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+5. Firebase required if you want to login with google account
+6. Create Activity or Fragment, and design ui in res/layout/
+7. Working on repository, create model response,remote data source, api service, NetworkBoundResource and project repository
+8. implement koin, create module file and class MyApplication
+9. Working on navigation, create item navigation at res/navigation, next see on [Android Developers](https://developer.android.com/guide/navigation/navigation-getting-started)
+
+### Machine Learning:
 1. Import dataset from spreadsheet URL as csv 
 2. Split the data into training, validation, and test data
 3. Convert the data to input pipeline using tf.data
@@ -44,9 +66,37 @@ Machine Learning:
 7. Export the model to TFX format
 8. Deploy and test the deployed model
 
+### Cloud:
+* On Compute Engine
+   1. Create VPS
+
+* On VPS (ML)
+   1. Download Machine Learning model from github
+   2. Install Tensorflow Model Server
+   3. Create Rest-API from Machine Learning model
+
+* On VSCode 
+   1. Create Rest API on Lumen PHP
+   2. Push to github
+
+* On VPS (API)
+   1. Pull data from github to Deploy Rest API on VPS
+   2. Download lumen 
+   3. Install lumen
+   4. Download composer
+   5. Configure lumen
+   6. Configure nginx for lumen web servers
+   7. Configure lumen endpoint for android
+
 ## References
-1. [TensorFlow: Data and Deployment-Tensorflow Datasets Week 2](https://github.com/lmoroney/dlaicourse/blob/master/TensorFlow%20Deployment/Course%203%20-%20TensorFlow%20Datasets/Week%202/Examples/feature_columns.ipynb)
-2. [TensorFlow: Data and Deployment-Tensorflow Serving Week 1](https://github.com/lmoroney/dlaicourse/blob/master/TensorFlow%20Deployment/Course%204%20-%20TensorFlow%20Serving/Week%201/Examples/tfserving_hello_world.ipynb)
-3. [10 Minutes to Deploying a Deep Learning Model on Google Cloud Platform](https://towardsdatascience.com/10-minutes-to-deploying-a-deep-learning-model-on-google-cloud-platform-13fa56a266ee)
-4. [Google Cloud Platform Custom Model Upload , REST API Inference and Model Version Monitoring](https://medium.com/analytics-vidhya/google-cloud-platform-custom-model-upload-rest-api-inference-and-model-version-monitoring-80216e69fbc2)
-5. [Cloud Engineering with Imre - YouTube](https://www.youtube.com/c/ImreNagi)
+1. [Android Developers](https://developer.android.com/)
+2. [Dicoding: Menjadi Android Developer Expert](https://www.dicoding.com/academies/165)
+3. [Dicoding: Belajar Android Jetpack Pro](https://www.dicoding.com/academies/129)
+4. [Firebase: Google Sign-In for Android](https://developers.google.com/identity/sign-in/android/sign-in)
+5. [Koin](https://insert-koin.io/docs/reference/koin-android/start)
+6. [Retrofit](https://square.github.io/retrofit/)
+7. [TensorFlow: Data and Deployment-Tensorflow Datasets Week 2](https://github.com/lmoroney/dlaicourse/blob/master/TensorFlow%20Deployment/Course%203%20-%20TensorFlow%20Datasets/Week%202/Examples/feature_columns.ipynb)
+8. [TensorFlow: Data and Deployment-Tensorflow Serving Week 1](https://github.com/lmoroney/dlaicourse/blob/master/TensorFlow%20Deployment/Course%204%20-%20TensorFlow%20Serving/Week%201/Examples/tfserving_hello_world.ipynb)
+9. [10 Minutes to Deploying a Deep Learning Model on Google Cloud Platform](https://towardsdatascience.com/10-minutes-to-deploying-a-deep-learning-model-on-google-cloud-platform-13fa56a266ee)
+10. [Google Cloud Platform Custom Model Upload , REST API Inference and Model Version Monitoring](https://medium.com/analytics-vidhya/google-cloud-platform-custom-model-upload-rest-api-inference-and-model-version-monitoring-80216e69fbc2)
+11. [Cloud Engineering with Imre - YouTube](https://www.youtube.com/c/ImreNagi)
