@@ -8,7 +8,7 @@ Indonesian Government data shows that 82.8% of survey respondents stated that th
 [Machine Learning](https://github.com/verm024/bsd-capstone) \
 [Cloud](https://github.com/ariidjs/capstone)
 
-## Our Team
+## Our Team - CAP0152
 1. [A1321655-Fikri Maulana](https://github.com/fikrim2204)
 2. [A1321661-Rizkhan Hadi](https://github.com/ariidjs)
 3. [M0080829-Daniel Suranta Sitepu](https://github.com/danielsitepu36)
@@ -48,13 +48,14 @@ Indonesian Government data shows that 82.8% of survey respondents stated that th
    * id 'androidx.navigation.safeargs.kotlin'
 
 4. If you want to use navigation component with safe args, add this to build.gradle(project)
-   * classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+   * classpath "androidx.navigation:navigation-safe-args-gradle-plugin:{latest_version}"
 
 5. Firebase required if you want to login with google account
 6. Create Activity or Fragment, and design ui in res/layout/
 7. Working on repository, create model response,remote data source, api service, NetworkBoundResource and project repository
 8. implement koin, create module file and class MyApplication
-9. Working on navigation, create item navigation at res/navigation, next see on [Android Developers](https://developer.android.com/guide/navigation/navigation-getting-started)
+9. Working on navigation
+10. Build the application
 
 ### Machine Learning:
 1. Import dataset from spreadsheet URL as csv 
